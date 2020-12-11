@@ -1,0 +1,7 @@
+{
+    "debug.javascript.unmapMissingSources": true,
+    "deno.import_intellisense_origins": {
+        "https://deno.land": true
+    },
+    "vue3snippets.enable-compile-vue-file-on-did-save-code": false
+}
