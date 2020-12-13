@@ -1,0 +1,41 @@
+Logged in as <%= email %>.
+<div class="nav nav-tabs" id="navTabs" role="tablist"> 
+    <a class="nav-item nav-link active" id="nav-morning-tab" href="#morning" data-toggle="tab" role="tab" aria-controls="nav-morning" aria-selected="true">Morning</a>
+    <a class="nav-item nav-link" id="nav-evening-tab" href="#evening" data-toggle="tab" role="tab" aria-controls="nav-evening" aria-selected="false">Evening</a>
+</div>
+
+<!--- Define content for each tab -->
+<div class="tab-content">
+    <div class="tab-pane active" id="morning" role="tabpanel" aria-labelledby="nav-morning-tab">
+        <div class="form-group col-sm-5">
+            <form method="POST" role="form">
+                <label for="date">Date: </label>
+                <input class="form-control" type="date" id="datePick" name="date" />
+                <label for="duration">Sleep duration: </label>
+                <input class="form-control" type="number" name="duration" step=".01"/>
+                <label for="duration">Sleep quality: </label>
+                <input class="form-control" type="range" name="quality" min="1" max="5"/>                
+                <label for="duration">Generic mood: </label>
+                <input class="form-control" type="range" name="mood" min="1" max="5"/>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>    
+        </div>
+    </div>
+    <div class="tab-pane" id="evening" role="tabpanel" aria-labelledby="nav-evening-tab">
+        <div class="form-group col-sm-5">
+            <form method="POST" role="form">
+                <label for="date">Date: </label>
+                <input class="form-control" type="date" id="datePick2" name="date" />
+                <label for="duration">Time spent on sports and exercise: </label>
+                <input class="form-control" type="number" name="sportDuration" step=".01"/>
+                <label for="duration">Time spent on studying: </label>
+                <input class="form-control" type="number" name="studyDuration" step=".01"/>
+                <label for="duration">Regularity and quality of eating: </label>
+                <input class="form-control" type="range" name="quality" min="1" max="5"/>                
+                <label for="duration">Generic mood: </label>
+                <input class="form-control" type="range" name="mood" min="1" max="5"/>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>    
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<%- include('./partials/header.ejs') %>
+<div class="form-group">
+    <form method="POST">
+        <label for="email">E-mail: </label>
+        <input class="form-control" type="email" name="email" />
+        <label for="pw">Password: </label>
+        <input class="form-control" type="password" name="pw" />
+        <input type="submit" value="Login" class="btn btn-primary">
+    </form>    
+</div>
+<% if (errors && errors.length > 0) { %>
+    <ul>
+    <% errors.forEach(error => { %>
+        <li><%= error %></li>
+    <% }) %>
+    </ul>
+<% } %>
+<%- include('./partials/footer.ejs') %>

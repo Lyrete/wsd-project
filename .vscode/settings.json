@@ -1,5 +1,4 @@
 {
-    "debug.javascript.unmapMissingSources": true,
     "deno.import_intellisense_origins": {
         "https://deno.land": true
     },
