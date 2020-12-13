@@ -1,7 +1,7 @@
-import {config} from "../config/config.js";
+import "../config/config.js";
 import { Pool } from "../deps.js";
 
-const pool = new Pool(config.database, 5);
+const pool = new Pool({}, 5);
 
 const executeQuery = async(query, ...params) => {
     const client = await pool.connect();
