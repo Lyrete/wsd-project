@@ -16,12 +16,13 @@ The page is styled mostly using [Darkly](https://bootswatch.com/darkly/) that is
 
 Use these CREATE statements to create the require tables in your own DB for testing
 
-`     CREATE TABLE users (
-        id SERIAL PRIMARY KEY,
-        email VARCHAR(320),
-        password VARCHAR(60)
-      );`
-
+```
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(320),
+  password VARCHAR(60)
+);
+```
 `    CREATE TABLE morningReports (
         id SERIAL PRIMARY KEY,
         date DATE NOT NULL,
