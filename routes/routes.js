@@ -2,6 +2,7 @@ import { Router } from "../deps.js";
 import { showForm, processForm } from "./controllers/registerController.js";
 import { showLogin, processLogin } from "./controllers/authController.js";
 import { showForms, processReport } from "./controllers/reportController.js";
+import { showSummaryPage } from "./controllers/summaryController.js";
 
 const router = new Router();
 
@@ -11,5 +12,6 @@ router.get('/auth/login', showLogin);
 router.post('/auth/login', processLogin);
 router.get('/behavior/reporting', showForms);
 router.post('/behavior/reporting', processReport);
+router.get('/behavior/summary', showSummaryPage);
 
 export { router };
