@@ -24,11 +24,7 @@ const errorMiddleware = async(context, next) => {
   }
 
   const authMiddleware = async({request, response, session}, next) => {
-    //SET USER FOR TESTING, remove when done
-    //await session.set('loggedUser', 2);
-    //await session.set('userEmail', 'tommi.alajoki@aalto.fi');
-    //REMOVE WHEN DONE
-    
+        
     if(request.url.pathname === '/favicon.ico'){
         response.status = 404;        
     }else if(!(request.url.pathname === '/' || request.url.pathname.startsWith('/api') || request.url.pathname.startsWith('/auth/')) && !(await session.get('loggedUser'))){
