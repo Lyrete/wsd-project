@@ -40,4 +40,4 @@ const getLoggedInUser = async({session}) => {
     }
 }
 
-export { registerUser, authUser }
+export { registerUser, authUser, getLoggedInUser };
