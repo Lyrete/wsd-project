@@ -14,13 +14,17 @@ A working demo can be found running for at least the end of the year on my webpa
 
 Instructions on how to run a demo on your own computer are lower in the README.
 
+The code is also available on my public [github](https://github.com/Lyrete/wsd-project)
+
 ## Dependencies
 
-There is one short third-party snippet of code to get the week number from a js date. I could've made it myself but it seemed a bit counterproductive. It is labeled pretty clearly and commented.
+There is one short third-party snippet of code to get the week number from a js date. I could've made it myself but it seemed a bit counterproductive. It is commented pretty clearly and credited.
 
 The page is styled mostly using [Darkly](https://bootswatch.com/darkly/) that is just a darker theme of [Bootstrap](https://getbootstrap.com/). Bootstrap is also used for some navigation functionality.
 
 To enable said navigation there is a tiny bit of jQuery in one file as this was what I was most familiar with but it is solely to enable the navigation tabs.
+
+Other elements should be content that is fairly well touched upon during the course.
 
 ### Demoing on your own build
 
