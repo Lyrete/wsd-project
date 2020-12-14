@@ -22,6 +22,7 @@ const showSummaryPage = async(context) => {
     const data = {
         week: params.week,
         month: params.month,
+        email: await(context.session.get('userEmail'))
     };
 
     //get logged id
