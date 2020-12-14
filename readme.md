@@ -8,13 +8,17 @@ An unauthed user can access average data through an API for all users and also s
 
 Functionality to auth and register is provided.
 
+## Missing functionality
+
+Some functionality is missing from the requirements but it's mostly there. Glaringly the tests are missing, other missing things are relatively minor.
+
 ## Demo
 
 A working demo can be found running for at least the end of the year on my webpage at http://lyrete.me:7777/
 
 Instructions on how to run a demo on your own computer are lower in the README.
 
-The code is also available on my public [github](https://github.com/Lyrete/wsd-project)
+The source code is also available on my public [github](https://github.com/Lyrete/wsd-project)
 
 ## Dependencies
 
@@ -37,8 +41,13 @@ PGDATABASE=(YOUR-DB-HERE)
 PGPASSWORD=(YOUR-PW-HERE)
 PGPORT=5432 (or other port?)
 ```
+Then you can run the file with deno. The bcrypt library seems to be somewhat unstable so was giving me warnings at least in procutions. Other flags are for the environmental variables for the DB and also to allow access to your DB.
 
-Use these CREATE statements to create the require tables in your own DB for testing.
+```
+deno run --allow-net --allow-env --allow-read --unstable app.js
+```
+
+Use these CREATE statements to create the require tables in your own DB for testing the functionality.
 
 ```
 CREATE TABLE users (
@@ -64,7 +73,7 @@ CREATE TABLE eveningReports (
   date DATE NOT NULL,
   sportDuration FLOAT NOT NULL,
   studyDuration FLOAT NOT NULL,  
-  quality INTEGER NOT NULL,
+  eatingquality INTEGER NOT NULL,
   mood INTEGER NOT NULL,
   user_id INTEGER REFERENCES users(id)
 );
