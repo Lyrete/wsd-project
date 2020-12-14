@@ -32,7 +32,7 @@ Other elements should be content that is fairly well touched upon during the cou
 
 ### Demoing on your own build
 
-The included config.js file only loads a .env file if one is present from the project folder. To ensure the db has the proper details for your own testDB make sure to include a .env file that has the following variables.
+The included config.js file only loads a .env file if one is present from the project folder. To ensure the db has the proper details for your own testDB make sure to include a .env file in the root directory that has the following variables.
 
 ```
 PGHOST=(YOUR-DBHOST-HERE)
