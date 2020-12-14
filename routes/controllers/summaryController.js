@@ -37,7 +37,7 @@ const showSummaryPage = async(context) => {
     //check if month was defined or default it to current month if not
     if(!data.month){    
         const date = new Date();    
-        data.month = `${date.getFullYear()}-${date.getMonth()}`;
+        data.month = `${date.getFullYear()}-${date.getMonth() + 1}`;
     }
 
     data.weekResults = await getWeeklySummary(data.week, user_id);
