@@ -1,18 +1,33 @@
 <%- include('./partials/header.ejs') %>
 <%- include('./partials/indexnav.ejs') %>
-
-<ul>
-    <li>
-        Average mood today morning: <%= today.morningMood %>
+<h1>WSD 2020 Reporting page</h1>
+<p>
+    Welcome to the page. In the navbar above you can find links to register and login.
+    Afterwards you can navigate to the reporting page where you can enter some data yourself and then look at
+    the summaries provided.
+</p>
+<p>
+    A more thorough readme and the source code can be found on my <a href="https://github.com/lyrete/wsd-project">github.</a>
+</p>
+<p>
+    There are two accessible API endpoints at /api/summary and /api/summary/year/month/day (enter desired date) that provide
+    a summary of data in .json form, check them out!
+</p>
+<p>
+    Here's an average of all users data for the past 2 days:
+</p>
+<ul class="list-group">
+    <li class="list-group-item">
+        Average mood today morning (Scaled 1-5): <%= today.morningMood %>
     </li>
-    <li>
-        Average mood yesterday evening: <%= yesterday.morningMood %>
+    <li class="list-group-item">
+        Average mood yesterday evening (Scaled 1-5): <%= yesterday.morningMood %>
     </li>
-    <li>
-        Average mood today evening: <%= today.eveningMood %>
+    <li class="list-group-item">
+        Average mood today evening (Scaled 1-5): <%= today.eveningMood %>
     </li>
-    <li>
-        Average mood yesterday evening: <%= yesterday.eveningMood %>
+    <li class="list-group-item">
+        Average mood yesterday evening (Scaled 1-5): <%= yesterday.eveningMood %>
     </li>
 </ul>
 <% if ((today.morningMood + today.eveningMood) > (yesterday.morningMood + yesterday.eveningMood)) { %>

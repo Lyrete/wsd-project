@@ -1,33 +1,38 @@
 <%- include('./partials/header.ejs') %>
 <%- include('./partials/indexnav.ejs') %>
 Logged in as <%= email %>
-<form>
-    <input type="week" name="week" required value="<%= week %>">
-    <input type="month" name="month" required value="<%= month %>">
-    <input type="submit">
-</form>
+<div class="form-group col-sm-5">
+    <form>
+        <label for="week">Choose a week:</label>
+        <input class="form-control" type="week" name="week" required value="<%= week %>">
+        <label for="month">Choose a month:</label>
+        <input class="form-control" type="month" name="month" required value="<%= month %>">
+        <input type="submit" class="btn btn-primary">
+    </form>
+</div>
+
 <h1>
     Weekly results
 </h1>
 <% if (weekResults.morningMood != 0 && weekResults.eveningMood != 0) { %>
-    <ul>
-        <li>
+    <ul class="list-group">
+        <li class="list-group-item">
             Average hours slept: <%= weekResults.sleep %>
         </li>
-        <li>
+        <li class="list-group-item">
             Average hours studied: <%= weekResults.study %>
         </li>
-        <li>
-            Average time spent on sports and exercise: <%= weekResults.sport %>
+        <li class="list-group-item">
+            Average hours spent on sports and exercise: <%= weekResults.sport %>
         </li>
-        <li>
-            Average quality of sleep: <%= weekResults.quality %>
+        <li class="list-group-item">
+            Average quality of sleep (Scaled 1-5): <%= weekResults.quality %>
         </li>
-        <li>
-            Average generic mood in the morning: <%= weekResults.morningMood %>
+        <li class="list-group-item">
+            Average generic mood in the (Scaled 1-5): <%= weekResults.morningMood %>
         </li>
-        <li>
-            Average generic mood in the evening: <%= weekResults.eveningMood %>
+        <li class="list-group-item">
+            Average generic mood in the evening (Scaled 1-5): <%= weekResults.eveningMood %>
         </li>
     </ul>
 <% } else { %>
@@ -38,24 +43,24 @@ Logged in as <%= email %>
     Monthly results
 </h1>
 <% if (monthResults.morningMood != 0 && monthResults.eveningMood != 0) { %>
-<ul>
-    <li>
+<ul class="list-group">
+    <li class="list-group-item">
         Average hours slept: <%= monthResults.sleep %>
     </li>
-    <li>
+    <li class="list-group-item">
         Average hours studied: <%= monthResults.study %>
     </li>
-    <li>
+    <li class="list-group-item">
         Average time spent on sports and exercise: <%= monthResults.sport %>
     </li>
-    <li>
-        Average quality of sleep: <%= monthResults.quality %>
+    <li class="list-group-item">
+        Average quality of sleep (Scaled 1-5): <%= monthResults.quality %>
     </li>
-    <li>
-        Average generic mood in the morning: <%= monthResults.morningMood %>
+    <li class="list-group-item">
+        Average generic mood in the morning (Scaled 1-5): <%= monthResults.morningMood %>
     </li>
-    <li>
-        Average generic mood in the evening: <%= monthResults.eveningMood %>
+    <li class="list-group-item">
+        Average generic mood in the evening (Scaled 1-5): <%= monthResults.eveningMood %>
     </li>
 </ul>
 <% } else { %>
