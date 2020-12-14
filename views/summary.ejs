@@ -1,0 +1,64 @@
+<%- include('./partials/header.ejs') %>
+<form>
+    <input type="week" name="week" required value="<%= week %>">
+    <input type="month" name="month" required value="<%= month %>">
+    <input type="submit">
+</form>
+<h1>
+    Weekly results
+</h1>
+<% if (weekResults.morningMood != 0 && weekResults.eveningMood != 0) { %>
+    <ul>
+        <li>
+            Average hours slept: <%= weekResults.sleep %>
+        </li>
+        <li>
+            Average hours studied: <%= weekResults.study %>
+        </li>
+        <li>
+            Average time spent on sports and exercise: <%= weekResults.sport %>
+        </li>
+        <li>
+            Average quality of sleep: <%= weekResults.quality %>
+        </li>
+        <li>
+            Average generic mood in the morning: <%= weekResults.morningMood %>
+        </li>
+        <li>
+            Average generic mood in the evening: <%= weekResults.eveningMood %>
+        </li>
+    </ul>
+<% } else { %>
+    No data logged for the selected week.
+<% } %>
+
+<h1>
+    Monthly results
+</h1>
+<% if (monthResults.morningMood != 0 && monthResults.eveningMood != 0) { %>
+<ul>
+    <li>
+        Average hours slept: <%= monthResults.sleep %>
+    </li>
+    <li>
+        Average hours studied: <%= monthResults.study %>
+    </li>
+    <li>
+        Average time spent on sports and exercise: <%= monthResults.sport %>
+    </li>
+    <li>
+        Average quality of sleep: <%= monthResults.quality %>
+    </li>
+    <li>
+        Average generic mood in the morning: <%= monthResults.morningMood %>
+    </li>
+    <li>
+        Average generic mood in the evening: <%= monthResults.eveningMood %>
+    </li>
+</ul>
+<% } else { %>
+    No data logged for the selected month.
+<% } %>
+
+
+<%- include('./partials/footer.ejs') %>
