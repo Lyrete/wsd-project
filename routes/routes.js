@@ -3,6 +3,8 @@ import { showForm, processForm } from "./controllers/registerController.js";
 import { showLogin, processLogin } from "./controllers/authController.js";
 import { showForms, processReport } from "./controllers/reportController.js";
 import { showSummaryPage } from "./controllers/summaryController.js";
+import { getSummary, getSummaryOfDay } from "./apis/api.js";
+import { showIndex } from "./controllers/indexController.js";
 
 const router = new Router();
 
@@ -13,5 +15,8 @@ router.post('/auth/login', processLogin);
 router.get('/behavior/reporting', showForms);
 router.post('/behavior/reporting', processReport);
 router.get('/behavior/summary', showSummaryPage);
+router.get('/api/summary', getSummary);
+router.get('/api/summary/:year/:month/:day', getSummaryOfDay)
+router.get('/',showIndex)
 
 export { router };
