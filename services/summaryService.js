@@ -2,7 +2,6 @@ import { executeQuery } from "../database/database.js";
 
 //function to combine the two queries we make and make them into an object
 const combineSummary = (morning, evening) => {    
-    
     //converting to numbers gets rid of weird string parses and makes values 0 if they don't exist
     return {
         sleep: Number(morning[0].sleep),
@@ -15,6 +14,22 @@ const combineSummary = (morning, evening) => {
 
 }
 
+//functions for the api
+const getLastWeek = async() => {
+    const morning = await executeQuery("SELECT AVG(duration) as sleep, AVG(quality) as quality, AVG(mood) as mood from morningreports WHERE date > (NOW() - INTERVAL '7 days')")
+    const evening = await executeQuery("SELECT AVG(studyduration) as study, AVG(sportduration) as sport, AVG(mood) as mood from eveningreports WHERE date > (NOW() - INTERVAL '7 days')")
+    
+    return combineSummary(morning, evening);
+}
+
+const getDay = async(date) => {
+    const morning = await executeQuery("SELECT AVG(duration) as sleep, AVG(quality) as quality, AVG(mood) as mood from morningreports WHERE date = $1", date)
+    const evening = await executeQuery("SELECT AVG(studyduration) as study, AVG(sportduration) as sport, AVG(mood) as mood from eveningreports WHERE date = $1", date)
+    
+    return combineSummary(morning, evening);
+}
+
+//functions for users
 const getWeeklySummary = async(weekInput, user_id) => {
     const week = weekInput.substr(6);
 
@@ -35,4 +50,4 @@ const getMonthlySummary = async(monthInput, user_id) => {
     return result;
 }
 
-export { getWeeklySummary, getMonthlySummary };
+export { getWeeklySummary, getMonthlySummary, getLastWeek, getDay };
