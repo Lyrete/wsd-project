@@ -14,3 +14,12 @@ if(window.location.href.split("#").pop() === "evening"){
 //Populating the date fields with current date (although this has tiny issue of being in UTC time so occasionally a day late)
 $("#datePick").val(new Date().toISOString().substr(0, 10));
 $("#datePick2").val(new Date().toISOString().substr(0, 10));
+
+//set the same dates as the max values as we can't go into the future to report yet
+$("#datePick").attr({
+  max: new Date().toISOString().substr(0, 10)
+});
+$("#datePick2").attr({
+  max: new Date().toISOString().substr(0, 10)
+});
+
