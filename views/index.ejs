@@ -1,3 +1,24 @@
 <%- include('./partials/header.ejs') %>
-Hello!
+<%- include('./partials/indexnav.ejs') %>
+
+<ul>
+    <li>
+        Average mood today morning: <%= today.morningMood %>
+    </li>
+    <li>
+        Average mood yesterday evening: <%= yesterday.morningMood %>
+    </li>
+    <li>
+        Average mood today evening: <%= today.eveningMood %>
+    </li>
+    <li>
+        Average mood yesterday evening: <%= yesterday.eveningMood %>
+    </li>
+</ul>
+<% if ((today.morningMood + today.eveningMood) > (yesterday.morningMood + yesterday.eveningMood)) { %>
+    <b>Things are looking bright today!</b>
+<% } else { %>
+    <b>Things are looking gloomy today...</b>
+<% } %>
+
 <%- include('./partials/footer.ejs') %>
