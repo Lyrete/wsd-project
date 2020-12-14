@@ -1,8 +1,6 @@
 import { getWeeklySummary, getMonthlySummary } from "../../services/summaryService.js";
 import { helpers } from "../../deps.js";
 
-//I wasn
-
 // Source: https://weeknumber.net/how-to/javascript
 // Returns the ISO week of the date.
 Date.prototype.getWeek = function() {
@@ -16,9 +14,6 @@ Date.prototype.getWeek = function() {
     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
                           - 3 + (week1.getDay() + 6) % 7) / 7);
 }
-
-
-
 
 //bringing in whole context here as to use helpers
 const showSummaryPage = async(context) => {
