@@ -1,7 +1,13 @@
 import { authUser } from "../../services/userService.js"
 
 const showLogin = ({render}) => {
-    render('login.ejs', {errors: []});
+    render('login.ejs', {errors: [], email: null});
+}
+
+const logout = async({session, response}) => {
+    await session.set('loggedUser', false);
+    await session.set('userEmail', null);
+    response.redirect('/');
 }
 
 const getData = async(request) => {
@@ -27,11 +33,11 @@ const processLogin = async({request, response, render, session}) => {
 
     if(!login){
         data.errors.push("Invalid email or password");
-        render('login.ejs', {errors: data.errors});
+        render('login.ejs', {errors: data.errors, email: null});
     }else{
         console.log(await session.get("loggedUser"))
         response.redirect('/behavior/reporting')
     }
 }
 
-export { showLogin, processLogin }
+export { showLogin, processLogin, logout }
