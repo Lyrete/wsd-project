@@ -50,7 +50,7 @@ const processForm = async({request, response, render}) => {
 
   if(data.errors.length === 0){
     registerUser(data.email, data.pw);
-    response.body = 'Registered user!';
+    response.redirect('/auth/login');
   }else{
     render('register.ejs', data)
   }
